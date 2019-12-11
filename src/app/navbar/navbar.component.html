@@ -1,0 +1,7 @@
+<ul *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <span>
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li *ngIf="isAdmin$ | async as isAdmin"><a [routerLink]="['/add']">Add new product</a></li>
+  </span>
+  <li><a (click)="logOut()">Log out</a></li>
+</ul>

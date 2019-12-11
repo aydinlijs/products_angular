@@ -1,0 +1,39 @@
+.product_details {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .left,
+  .right {
+    width: 50%;
+  }
+  .left {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    border-radius: 5px;
+  }
+  .right {
+    padding: 0 20px;
+    .buttons {
+      width: 100%;
+      float: left;
+      display: flex;
+      justify-content: space-between;
+      button {
+        width: 48%;
+        float: left;
+        height: 40px;
+        background-color: #038ec6;
+        border: none;
+        cursor: pointer;
+        line-height: 40px;
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

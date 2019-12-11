@@ -1,0 +1,18 @@
+<div class="product_details">
+  <div
+    class="left"
+    [ngStyle]="{ 'background-image': 'url(' + product.image + ')' }"
+  ></div>
+  <div class="right">
+    <h4>{{ product.name }}</h4>
+    <p>{{ product.description }}</p>
+    <div *ngIf="isAdmin$ | async as isAdmin" class="buttons">
+      <button>
+        <a href="#" (click)="delete(product.id)">Delete</a>
+      </button>
+      <button>
+        <a [routerLink]="['/edit', product.id]">Edit</a>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="products_List">
+  <div class="product" *ngFor="let item of products">
+    <div
+      class="product_Image"
+      [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }"
+    ></div>
+    <div class="product_Info">
+      <div class="product_Info_Inner">
+        <h4>{{ item.name }}</h4>
+        <p>
+          {{ item.description.substring(0, 50)
+          }}{{ item.description.length > 45 ? "..." : "" }}
+        </p>
+        <div class="buttons">
+          <button *ngIf="isAdmin$ | async as isAdmin">
+            <a href="#" (click)="delete(item.id)">Delete</a>
+          </button>
+          <button>
+            <a [routerLink]="['/details', item.id]">See</a>
+          </button>
+          <button *ngIf="isAdmin$ | async as isAdmin">
+            <a [routerLink]="['/edit', item.id]">Edit</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
